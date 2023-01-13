@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/config/colors.dart';
 
 class MyButton extends StatelessWidget {
   final String? title;
@@ -16,13 +17,14 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-        minWidth: 300.w,
+        minWidth: double.maxFinite,
         height: 45.h,
-        color: Color.fromARGB(255, 8, 186, 100),
+        color: AppColors.mainColor,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.w)),
         onPressed: onPressed,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title!,

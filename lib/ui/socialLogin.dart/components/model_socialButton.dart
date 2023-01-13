@@ -6,6 +6,7 @@ class SocialButton extends StatelessWidget {
   final String title;
   final String image;
   final void Function()? onPressed;
+
   const SocialButton({
     Key? key,
     required this.title,
@@ -16,6 +17,7 @@ class SocialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         InkWell(
           onTap: onPressed,

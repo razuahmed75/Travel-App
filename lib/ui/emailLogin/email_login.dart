@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rodcem/ui/profileSetupPage/profile_setup_page.dart';
-import 'package:rodcem/utils/my_textfield.dart';
+import 'package:travel_app/config/dimensions.dart';
+import 'package:travel_app/ui/profileSetupPage/profile_setup_page.dart';
+import 'package:travel_app/utils/my_textfield.dart';
 import '../../utils/continue_button.dart';
 
 class EmailLoginPage extends StatefulWidget {
@@ -26,111 +27,95 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  /// background image
-                  Image.asset(
-                    'assets/images/background.jpg',
-                    fit: BoxFit.cover,
-                    width: size.width,
-                    height: size.height,
+      child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  'assets/images/Login Page.png',
+                ))),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: Dimensions.height15 * 2),
+                Image.asset('assets/images/logo1.png'),
+                SizedBox(height: Dimensions.height300 + 50),
+
+                /// Email sign in
+                Text(
+                  'Email sign in',
+                  style: GoogleFonts.roboto(
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
                   ),
+                ),
+                SizedBox(height: Dimensions.height10 + 2),
 
-                  /// header logo
-                  Positioned(
-                      left: 0.4.sw,
-                      top: 50,
-                      child: Image.asset('assets/images/logo.png')),
+                /// divider
+                Container(
+                  width: 50.w,
+                  height: 2.h,
+                  color: Colors.white.withOpacity(0.5),
+                ),
+                SizedBox(height: Dimensions.height25),
 
-                  /// Email sign in
-                  Positioned(
-                    top: 0.5.sh,
-                    left: 0.3.sw,
-                    child: Text(
-                      'Email sign in',
-                      style: GoogleFonts.roboto(
-                        fontSize: 28.sp,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-
-                  /// divider
-                  Positioned(
-                    top: 0.56.sh,
-                    left: 0.45.sw,
-                    child: Container(
-                      width: 50.w,
-                      height: 2.h,
-                      color: Colors.white.withOpacity(0.5),
-                    ),
-                  ),
-
-                  /// TextField
-                  Positioned(
-                    top: 0.59.sh,
-                    left: 0.1.sw,
-                    child: SizedBox(
-                      width: 290.w,
-                      height: 110.h,
-                      child: Form(
-                        key: _formKey,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            MyTextFeild(
-                              controller: _emailController,
-                              hintText: 'Your email address',
-                              obscureText: false,
-                            ),
-                            MyTextFeild(
-                              controller: _passController,
-                              obscureText: _obscureText,
-                              hintText: 'A secure password',
-                              suffixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: IconButton(
-                                      padding: EdgeInsets.all(0),
-                                      onPressed: () {
-                                        setState(() {
-                                          _obscureText = !_obscureText;
-                                        });
-                                      },
-                                      icon: Icon(
-                                        _obscureText == true
-                                            ? Icons.visibility_off_outlined
-                                            : Icons.visibility_outlined,
-                                        color: Colors.white.withOpacity(0.6),
-                                      ))),
-                            )
-                          ],
+                /// TextField
+                Container(
+                  margin: EdgeInsets.only(
+                      left: Dimensions.width24 + 6,
+                      right: Dimensions.width24 + 6),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        MyTextFeild(
+                          controller: _emailController,
+                          hintText: 'Your email address',
+                          obscureText: false,
                         ),
-                      ),
+                        SizedBox(height: Dimensions.height10),
+                        MyTextFeild(
+                          controller: _passController,
+                          obscureText: _obscureText,
+                          hintText: 'A secure password',
+                          suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon: IconButton(
+                                  padding: EdgeInsets.all(0),
+                                  onPressed: () {
+                                    setState(() {
+                                      _obscureText = !_obscureText;
+                                    });
+                                  },
+                                  icon: Icon(
+                                    _obscureText == true
+                                        ? Icons.visibility_off_outlined
+                                        : Icons.visibility_outlined,
+                                    color: Colors.white.withOpacity(0.6),
+                                  ))),
+                        )
+                      ],
                     ),
                   ),
+                ),
+                SizedBox(height: Dimensions.height35 - 1),
 
-                  /// Continue button
-                  Positioned(
-                    bottom: 0.13.sh,
-                    left: 0.3.sw,
-                    child: BuildContinueButton(
-                      title: 'Continue',
-                      onPressed: () {
-                        Get.to(() => ProfileSetupPage());
-                      },
-                    ),
-                  ),
+                /// Continue button
+                BuildMaterialButton(
+                  title: 'Continue',
+                  onPressed: () {
+                    Get.to(() => ProfileSetupPage());
+                  },
+                ),
+                SizedBox(height: Dimensions.height20),
 
-                  /// Forgot password?
-                  buildTextButton(title: 'Forgot Password?', onPressed: () {}),
-                ],
-              ),
-            ],
+                /// Forgot password?
+                buildTextButton(title: 'Forgot Password?', onPressed: () {}),
+              ],
+            ),
           ),
         ),
       ),
@@ -141,18 +126,15 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
     required String? title,
     required void Function()? onPressed,
   }) {
-    return Positioned(
-        bottom: 0.05.sh,
-        left: 0.32.sw,
-        child: TextButton(
-            style: TextButton.styleFrom(minimumSize: Size(133.w, 16.h)),
-            onPressed: onPressed,
-            child: Text(
-              title!,
-              style: GoogleFonts.roboto(
-                fontSize: 14.sp,
-                color: Color.fromARGB(255, 8, 186, 100),
-              ),
-            )));
+    return TextButton(
+        style: TextButton.styleFrom(minimumSize: Size(133.w, 16.h)),
+        onPressed: onPressed,
+        child: Text(
+          title!,
+          style: GoogleFonts.roboto(
+            fontSize: 14.sp,
+            color: Color.fromARGB(255, 8, 186, 100),
+          ),
+        ));
   }
 }

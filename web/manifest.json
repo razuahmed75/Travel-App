@@ -1,6 +1,6 @@
 {
-    "name": "rodcem",
-    "short_name": "rodcem",
+    "name": "travel_app",
+    "short_name": "travel_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

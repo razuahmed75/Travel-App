@@ -4,8 +4,9 @@ import 'package:device_preview/device_preview.dart';
 import 'myapp.dart';
 
 void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const MyApp(), // Wrap your app
-      ),
+      // DevicePreview(
+      //   enabled: !kReleaseMode,
+      //   builder: (context) => const MyApp(), // Wrap your app
+      // ),
+      const MyApp(),
     );

@@ -3,7 +3,7 @@ import 'package:travel_app/config/dimensions.dart';
 import 'package:travel_app/data/offer_category_model.dart';
 import 'package:travel_app/ui/bottom_nav_controller/offer/components/offer_card.dart';
 import 'package:travel_app/utils/expanded_container.dart';
-import 'text_and_divider.dart';
+import 'components/text_and_divider.dart';
 
 class OfferScreenBody extends StatelessWidget {
   const OfferScreenBody({super.key});

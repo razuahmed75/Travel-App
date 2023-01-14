@@ -21,21 +21,21 @@ double dynamicWidth(double inputwidth) {
 }
 
 /// dynamic font
-double dynamicFont(double inputHeight) {
+double dynamicFont(double inputFont) {
   double screenHeight = Dimensions.screenHeight;
   double mockupHeight = Dimensions.mockupHeight;
 
-  var x = mockupHeight / inputHeight;
+  var x = mockupHeight / inputFont;
   var y = screenHeight / x;
   return y;
 }
 
 /// dynamic radius
-double dynamicRadius(double inputHeight) {
+double dynamicRadius(double inputRadius) {
   double screenHeight = Dimensions.screenHeight;
   double mockupHeight = Dimensions.mockupHeight;
 
-  var x = mockupHeight / inputHeight;
+  var x = mockupHeight / inputRadius;
   var y = screenHeight / x;
   return y;
 }

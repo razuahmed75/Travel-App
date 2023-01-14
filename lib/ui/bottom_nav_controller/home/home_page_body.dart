@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../../config/dimensions.dart';
-import '../../../../utils/around_the_world.dart';
-import '../../../../utils/catagories_text.dart';
-import '../../../../utils/popular_deals.dart';
-import 'circle_tiles.dart';
-import 'search_bar.dart';
-import 'slider.dart';
+import '../../../config/dimensions.dart';
+import '../../../utils/around_the_world.dart';
+import '../../../utils/catagories_text.dart';
+import '../../../utils/popular_deals.dart';
+import 'components/circle_tiles.dart';
+import 'components/search_bar.dart';
+import 'components/slider.dart';
 
 class HomePageBody extends StatelessWidget {
   const HomePageBody({super.key});

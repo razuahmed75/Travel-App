@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/config/colors.dart';
 import 'package:travel_app/config/dimensions.dart';
-import 'package:travel_app/utils/big_text.dart';
 import 'package:travel_app/utils/icon_and_text.dart';
 import 'package:travel_app/utils/page_header.dart';
-import 'package:travel_app/utils/single_icon.dart';
-import 'components/home_page_body.dart';
+import 'home_page_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

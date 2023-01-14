@@ -3,7 +3,7 @@ import 'package:travel_app/config/colors.dart';
 import 'package:travel_app/utils/page_header.dart';
 import 'package:travel_app/utils/small_text.dart';
 import '../../../config/dimensions.dart';
-import 'components/body.dart';
+import 'offer_body.dart';
 
 class OfferScreen extends StatelessWidget {
   const OfferScreen({super.key});

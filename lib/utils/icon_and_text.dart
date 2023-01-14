@@ -5,7 +5,15 @@ import 'package:travel_app/utils/small_text.dart';
 
 class IconAndText extends StatelessWidget {
   final String text;
-  const IconAndText({super.key, required this.text});
+  final double? textSize, iconSize, textAndIconDistance;
+
+  const IconAndText({
+    super.key,
+    required this.text,
+    this.textSize,
+    this.iconSize,
+    this.textAndIconDistance,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +22,13 @@ class IconAndText extends StatelessWidget {
         Icon(
           Icons.location_on_outlined,
           color: AppColors.textColor,
-          size: Dimensions.height15 - 1,
+          size: iconSize ?? Dimensions.height15 - 1,
         ),
-        SizedBox(width: Dimensions.width10 - 3),
-        SmallText(text: text),
+        SizedBox(width: dynamicWidth(textAndIconDistance ?? 7.11)),
+        SmallText(
+          text: text,
+          size: textSize ?? dynamicFont(13),
+        ),
       ],
     );
   }

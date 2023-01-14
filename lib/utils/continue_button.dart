@@ -24,6 +24,7 @@ class BuildMaterialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      padding: EdgeInsets.all(0),
       minWidth: minWidth ?? 151.w,
       height: height ?? 50.h,
       color: AppColors.mainColor,

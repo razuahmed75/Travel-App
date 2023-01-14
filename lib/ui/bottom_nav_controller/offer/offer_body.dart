@@ -56,7 +56,8 @@ class OfferScreenBody extends StatelessWidget {
                 itemCount: OfferList.length,
                 itemBuilder: (_, index) {
                   return CardTile(index: index);
-                })
+                }),
+            SizedBox(height: dynamicHeight(75)),
           ],
         ),
       ),

@@ -61,6 +61,7 @@ class HomePageBody extends StatelessWidget {
             /// around the world listTile
             AroundTheWorldTile(),
             AroundTheWorldTile(title: 'Longest Sea Beach'),
+            SizedBox(height: dynamicHeight(75)),
           ],
         ),
       ),

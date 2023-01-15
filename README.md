@@ -1,16 +1,9 @@
 # travel_app
 
-A new Flutter project.
 
-## Getting Started
+![Component 1](https://user-images.githubusercontent.com/99271821/212535302-728543f9-5ee8-4ec1-b0fd-2fdfa8ac7f4d.png)
 
-This project is a starting point for a Flutter application.
+![Component 2](https://user-images.githubusercontent.com/99271821/212535310-c3b81f63-0a24-43fd-8178-5a5db87d6041.png)
 
-A few resources to get you started if this is your first Flutter project:
+![Component 3](https://user-images.githubusercontent.com/99271821/212535667-015dbf82-3110-49af-a695-dcd2955e28ec.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
